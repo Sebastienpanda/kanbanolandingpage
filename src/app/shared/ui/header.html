@@ -1,0 +1,32 @@
+<header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg bg-base-100/80 border-b border-base-300/50 shadow-sm">
+    <nav aria-label="Navigation principale" class="container py-4 flex items-center justify-between" role="navigation">
+        <a aria-label="FlowBoard - Retour à l'accueil"
+           class="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+           routerLink="/">
+            Kanbano
+        </a>
+
+        <app-nav/>
+
+        <div class="flex items-center gap-3">
+            <button
+                (click)="theme.toggle()"
+                [attr.aria-label]="theme.isDark() ? 'Passer en mode clair' : 'Passer en mode sombre'"
+                class="btn btn-ghost btn-sm btn-circle hover:bg-base-200/50 group">
+                @if (theme.isDark()) {
+                    <lucide-icon [img]="Sun" aria-hidden="true"
+                                 class="group-hover:rotate-12 transition-transform duration-300 ease-in-out"
+                                 size="20"/>
+                } @else {
+                    <lucide-icon [img]="Moon" aria-hidden="true"
+                                 class="group-hover:rotate-12 transition-transform duration-300 ease-in-out"
+                                 size="20"/>
+                }
+            </button>
+
+            <a aria-label="Se connecter à votre compte" class="btn btn-primary" fragment="waitlist"
+               routerLink="">Rejoindre la waitlist
+            </a>
+        </div>
+    </nav>
+</header>

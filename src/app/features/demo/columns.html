@@ -1,0 +1,23 @@
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    @for (column of columns(); track column.id) {
+        <div class="space-y-4">
+            <div
+                class="flex items-center justify-between p-4 rounded-xl bg-linear-to-br {{ column.color }}">
+                <h3 class="font-semibold flex items-center gap-2">
+                    <span [class]="`bg-${classColumn()[column.id]}`" class="size-2 rounded-full"></span>
+                    {{ column.name }}
+                </h3>
+                <span class="text-xs font-semibold px-2 py-1 rounded-full bg-base-100/50">
+                                {{ cardsByColumn(column.id).length }}
+                            </span>
+            </div>
+
+            <div class="flex flex-col gap-4 min-h-[300px]">
+                @for (card of cardsByColumn(column.id); track card.id) {
+                    <app-card [card]="card"/>
+                }
+            </div>
+        </div>
+    }
+</div>
+

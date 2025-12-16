@@ -1,0 +1,45 @@
+<section class="relative py-24">
+    <div aria-hidden="true" class="absolute inset-0 pattern-grid"></div>
+
+    <div
+        aria-hidden="true"
+        class="absolute inset-0 bg-linear-to-br from-primary/10 via-secondary/5 to-accent/10"
+    ></div>
+
+    <div class="relative container text-center space-y-8">
+        <div class="badge badge-lg">
+            <span class="status status-success animate-ping mr-2"></span>
+            <span class="text-sm font-semibold"
+            >Nouveau : Rejoindre la waitlist</span
+            >
+        </div>
+
+        <h1 class="text-5xl md:text-7xl max-w-6xl mx-auto">
+            {{ displayedText() }}
+            <span aria-hidden="true" class="animate-blink text-primary">|</span>
+        </h1>
+
+        <p
+            class="text-xl md:text-2xl text-base-content/70 max-w-3xl mx-auto animate-fade-in-up delay-400"
+        >
+            Le Kanban nouvelle génération qui booste votre productivité.
+            Collaboratif, intelligent, et tellement simple.
+        </p>
+
+        <div
+            class="flex flex-col sm:flex-row items-center justify-center gap-4"
+        >
+            <a class="btn btn-primary btn-lg" fragment="waitlist" routerLink="">
+                Rejoindre la waitlist
+            </a>
+
+            <button
+                (click)="scrollToSection('demo')"
+                aria-label="Voir la démonstration interactive"
+                class="btn btn-outline btn-lg"
+            >
+                Voir la démo
+            </button>
+        </div>
+    </div>
+</section>

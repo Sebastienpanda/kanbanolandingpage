@@ -1,0 +1,83 @@
+<section class="relative py-32 overflow-hidden" id="waitlist">
+    <div
+        class="absolute inset-0 bg-linear-to-br from-primary/10 via-secondary/10 to-accent/10"
+    ></div>
+
+    <div
+        class="absolute inset-0 bg-[linear-gradient(to_right,#8882_1px,transparent_1px),linear-gradient(to_bottom,#8882_1px,transparent_1px)] bg-size-[3rem_3rem] opacity-30"
+    ></div>
+    <div
+        class="absolute top-0 left-1/4 w-96 h-96 bg-primary/30 rounded-full blur-3xl animate-pulse"
+    ></div>
+    <div
+        class="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary/30 rounded-full blur-3xl animate-pulse"
+        style="animation-delay: 1.5s"
+    ></div>
+
+    <div class="container relative z-10">
+        <div class="max-w-5xl mx-auto text-center space-y-8">
+            <div
+                class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-base-200/80 backdrop-blur-lg border border-primary/30 shadow-xl shadow-primary/10 animate-fade-in"
+            >
+                <span class="relative flex h-3 w-3">
+                    <span
+                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-success opacity-75"
+                    ></span>
+                    <span
+                        class="relative inline-flex rounded-full h-3 w-3 bg-success"
+                    ></span>
+                </span>
+                <span class="text-sm font-semibold">Rejoindre la waitlist</span>
+            </div>
+
+            <h2 class="text-5xl md:text-7xl">
+                Prêt à transformer votre
+                <span
+                    class="bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent"
+                >
+                    productivité ?
+                </span>
+            </h2>
+
+            <p
+                class="text-xl md:text-2xl text-base-content/70 max-w-3xl mx-auto animate-fade-in-up delay-400"
+            >
+                Faites partie des early adopters qui font évoluer Kanbano
+            </p>
+
+            <div
+                class="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8"
+            >
+                <form
+                    (ngSubmit)="onSubmit()"
+                    [formGroup]="form"
+                    class="space-y-4"
+                >
+                    <div class="space-y-4">
+                        <label class="label lg:text-2xl" for="waitlistLabel"
+                        >Entrer votre email pour rejoindre la
+                            waitlist</label
+                        >
+                        <input
+                            class="input input-lg"
+                            formControlName="email"
+                            id="waitlistLabel"
+                            placeholder="john@doe.fr"
+                            type="email"
+                        />
+                        <app-form-error [control]="form.controls.email"/>
+                    </div>
+                    <button
+                        [class]="form.invalid ? 'btn-disabled' :'btn-primary'"
+                        [disabled]="form.invalid"
+                        aria-label="Rejoindre la waitlist"
+                        class="btn btn-lg"
+                        type="submit"
+                    >
+                        Rejoindre la waitlist
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

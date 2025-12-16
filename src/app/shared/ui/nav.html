@@ -1,0 +1,11 @@
+<ul class="hidden md:flex items-center gap-8" role="menubar">
+    @for (item of navItems(); track item.title) {
+        <li role="menuitem">
+            <a
+                [fragment]="item.url" [routerLink]="''"
+                class="text-base font-medium hover:text-primary transition-colors relative inline-block before:absolute before:-bottom-1 before:left-0 before:w-0 before:h-0.5 before:bg-primary hover:before:w-full before:transition-[width] before:duration-[350ms] before:ease-in-out before:content-['']">
+                {{ item.title }}
+            </a>
+        </li>
+    }
+</ul>

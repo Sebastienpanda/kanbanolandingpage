@@ -1,0 +1,10 @@
+{
+    "plugins": {
+        "@tailwindcss/postcss": {},
+        "autoprefixer": {
+            "overrideBrowserslist": [
+                "last 4 version"
+            ]
+        }
+    }
+}

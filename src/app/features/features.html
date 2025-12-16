@@ -1,0 +1,46 @@
+<section class="py-24 bg-base-200" id="features">
+    <div class="container">
+        <h2 class="text-4xl md:text-5xl text-center">
+            Tout ce dont vous avez besoin,
+            <span
+                class="bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent"
+            >
+                et même plus
+            </span>
+        </h2>
+        <p class="text-lg text-base-content/70 text-center mt-4">
+            Des fonctionnalités pensées pour aller vite et travailler
+            efficacement
+        </p>
+
+        <div
+            class="grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2"
+        >
+            @for (feature of features(); track feature.title; let i = $index;
+                let total = $count) {
+                <div
+                    [class.lg:col-span-2]="i >= total - 3"
+                    [class.lg:col-span-3]="i < 2"
+                    class="card bg-base-100/50 backdrop-blur-sm border border-base-300/50"
+                >
+                    <div class="card-body">
+                        <lucide-icon
+                            [img]="feature.icon"
+                            aria-hidden="true"
+                            class="text-white"
+                            size="40"
+                        />
+                        <h3 class="text-2xl mt-6">{{ feature.title }}</h3>
+                        <p class="text-base-content/70">
+                            {{ feature.description }}
+                        </p>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div class="text-center mt-16">
+            <p class="text-base-content/60 mb-4">Et ce n'est que le début...</p>
+        </div>
+    </div>
+</section>
