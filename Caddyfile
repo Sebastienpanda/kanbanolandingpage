@@ -3,7 +3,7 @@
 }
 
 :80 {
-    root * /app/dist/kanban-users/browser/browser
+    root * /srv
     encode zstd gzip
 
     try_files {path} {path} .html {path} / /index.html
